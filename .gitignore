@@ -1,0 +1,18 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Build outputs
+dist/
+build/
+out/
+target/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

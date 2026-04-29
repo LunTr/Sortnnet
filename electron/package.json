@@ -1,0 +1,79 @@
+{
+  "name": "desktop-pet-electron",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Transparent desktop pet with Electron chat frontend",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist:win:portable": "electron-builder --win portable --x64 --publish never"
+  },
+  "devDependencies": {
+    "electron": "^37.2.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "dompurify": "^3.2.6",
+    "katex": "^0.16.40",
+    "marked": "^15.0.7"
+  },
+  "build": {
+    "appId": "com.sortnnet.desktoppet",
+    "productName": "Sortnnet",
+    "directories": {
+      "output": "../dist"
+    },
+    "asar": true,
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../target/release/ccconnect.exe",
+        "to": "bin/ccconnect.exe"
+      },
+      {
+        "from": "../target/release/cceverything.exe",
+        "to": "bin/cceverything.exe"
+      },
+      {
+        "from": "../target/release/ccsort.exe",
+        "to": "bin/ccsort.exe"
+      },
+      {
+        "from": "../target/release/ccgitconnect.exe",
+        "to": "bin/ccgitconnect.exe"
+      },
+      {
+        "from": "../target/release/ccsettings.exe",
+        "to": "bin/ccsettings.exe"
+      },
+      {
+        "from": "../target/release/ccrecorder.exe",
+        "to": "bin/ccrecorder.exe"
+      },
+      {
+        "from": "../progressMessage.txt",
+        "to": "progressMessage.txt"
+      },
+      {
+        "from": "../ico.png",
+        "to": "ico.png"
+      }
+    ],
+    "win": {
+      "signAndEditExecutable": false,
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
+  }
+}

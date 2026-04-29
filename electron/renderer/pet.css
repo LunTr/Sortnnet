@@ -1,0 +1,85 @@
+:root {
+  --accent: #d97757;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  font-family: "Segoe UI Variable Text", "Microsoft YaHei UI", sans-serif;
+}
+
+.pet-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: transparent;
+}
+
+.pet-drag-zone {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  cursor: move;
+}
+
+.pet-aura {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  background: radial-gradient(circle at center, rgba(217, 119, 87, 0.68), rgba(217, 119, 87, 0));
+  filter: blur(8px);
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+.pet-wrap {
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 999px;
+  font-size: 15px;
+  line-height: 1;
+  color: #fff;
+  background: rgba(217, 119, 87, 0.78);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.pet-image {
+  width: 210px;
+  max-width: 88%;
+  user-select: none;
+  transition: transform 180ms ease;
+}
+
+.pet-image.jump {
+  animation: bounce 260ms ease;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0) scale(1); }
+  45% { transform: translateY(-12px) scale(1.06); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(0.95); opacity: 0.55; }
+  50% { transform: scale(1.05); opacity: 0.95; }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "desktop-pet-root",
+  "private": true,
+  "scripts": {
+    "start": "npm --prefix electron start",
+    "setup": "npm --prefix electron install",
+    "build:rust:release": "cargo build --release --bin ccconnect --bin cceverything --bin ccsort --bin ccgitconnect --bin ccsettings --bin ccrecorder",
+    "dist:win:single": "npm run build:rust:release && npm --prefix electron run dist:win:portable"
+  }
+}

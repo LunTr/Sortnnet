@@ -1,0 +1,8 @@
+{
+  "name": "file-organizer-skill",
+  "version": "1.0.0",
+  "description": "Two-phase local file organizer with scan, dry-run, and apply",
+  "entry": "ccsort",
+  "protocol": "json-stdio",
+  "actions": ["scan", "dryRun", "apply"]
+}

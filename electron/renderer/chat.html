@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desktop Pet Chat</title>
+    <link rel="stylesheet" href="../node_modules/katex/dist/katex.min.css" />
+    <link rel="stylesheet" href="./chat.css" />
+  </head>
+  <body>
+    <section class="chat-panel" id="chatPanel" aria-label="chat panel">
+      <header class="chat-header" id="chatHeader">
+        <h1 id="chatTitle"></h1>
+        <button id="newSessionBtn" class="new-session-btn"></button>
+      </header>
+
+      <div id="messages" class="messages"></div>
+
+      <footer class="composer">
+        <div class="composer-tools">
+          <button id="attachBtn" class="attach-btn" type="button"></button>
+          <label class="file-edit-toggle">
+            <input id="allowFileEdits" type="checkbox" />
+            <span id="allowFileEditsLabel"></span>
+          </label>
+          <span id="attachTip" class="attach-tip"></span>
+        </div>
+        <div id="attachments" class="attachments" aria-live="polite"></div>
+        <textarea id="input" placeholder=""></textarea>
+        <button id="sendBtn"></button>
+      </footer>
+    </section>
+    <div class="resize-grip" id="resizeGrip" title=""></div>
+
+    <script defer src="../node_modules/katex/dist/katex.min.js"></script>
+    <script defer src="../node_modules/katex/dist/contrib/auto-render.min.js"></script>
+    <script defer src="../node_modules/marked/marked.min.js"></script>
+    <script defer src="../node_modules/dompurify/dist/purify.min.js"></script>
+    <script src="./chat.js"></script>
+  </body>
+</html>
