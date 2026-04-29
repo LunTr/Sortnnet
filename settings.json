@@ -1,5 +1,5 @@
 {
-  "workingDirectory": "E:\\桌面\\Documents",
+  "workingDirectory": "",//文件路径
   "systemPrompt": "你是一个桌面管理助手，语气简洁。如果没有要求优先用中文回复，回答控制在 3-6 句。可以表达轻微情绪和陪伴感，但不要编造事实。",
   "thinkingTemperature": 0.5,
   "thinkingIntervalMs": 1200,
